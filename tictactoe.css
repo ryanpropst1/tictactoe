@@ -1,0 +1,51 @@
+/* adds padding for the board and centers the text */
+#board {
+  padding-top: 3em;
+  text-align: center;
+}
+
+/* added a new font and letting space for my own styling */
+h1 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 0.2em;
+}
+
+/* sets the divs of each row to float left and align with each other on the viewport */
+.row>div {
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+
+/* my cursor is already a pointer so made this a crosshair and added square class for hover feature in each square */
+.square:hover {
+  cursor: crosshair;
+}
+
+/* removes the float from the end of each row so that each row starts on the next position and adds a margin and sets the width of each individual square */
+.row {
+  clear: both;
+  margin: 0 auto;
+  width: 302px;
+}
+
+/* the next 4 CSS selectors create the visible board for the tic tac toe game */
+/* set the border of the top row with a bottom border */
+.top {
+  border-bottom: 1px solid black;
+}
+
+/* following the propety flow of CSS from top, left, etc. sets the border of the left column to it's right */
+.left {
+  border-right: 1px solid black;
+}
+
+/* sets the bottom row border to the top */
+.btm {
+  border-top: 1px solid black;
+}
+
+/* sets the right column border to it's left  */
+.right {
+  border-left: 1px solid black;
+}
