@@ -4,10 +4,29 @@
   text-align: center;
 }
 
+
+body {
+  background-color: rgb(147, 162, 179);
+}
+
 /* added a new font and letting space for my own styling */
 h1 {
   font-family: 'Bangers', cursive;
   letter-spacing: 0.2em;
+}
+
+h3 {
+  color: #362A28;
+  font-size: 30px;
+  background-color: mediumslateblue;
+  margin: 1em -2em;
+  padding: 15px 30px 30px 30px;
+}
+
+.winner {
+  height: 25px;
+  width: auto;
+  text-decoration: underline;
 }
 
 /* sets the divs of each row to float left and align with each other on the viewport */
@@ -35,7 +54,7 @@ h1 {
   border-bottom: 1px solid black;
 }
 
-/* following the propety flow of CSS from top, left, etc. sets the border of the left column to it's right */
+/* following the property flow of CSS from top, left, etc. sets the border of the left column to it's right */
 .left {
   border-right: 1px solid black;
 }

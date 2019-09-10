@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,45 @@
   <link rel="stylesheet" href="tictactoe.css">
   <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
 
-<!-- Head -->
+  <!-- Head -->
 </head>
 
 <!-- Body -->
+
 <body>
 
-<!-- Container -->
-<div class="container" id="board">
+  <!-- Container -->
+  <div class="container" id="board">
 
-  <!-- Heading -->
-  <h1>Tic Tac Toe</h1>
+    <!-- Heading -->
+    <h1>Tic Tac Toe</h1>
+    <h3 class="winner" id="winnerCircle"></h3>
+    <h3 class="draw" id="drawCircle"></h3>
 
-    <div class="row">
+    <div class="row" id="topRow">
       <!-- Top Row -->
-      <div class="top left square" id="square1"></div>
-      <div class="top middle square" id="square2"></div>
-      <div class="top right square" id="square3"></div>
+      <div class="top left square" id="one"></div>
+      <div class="top middle square" id="two"></div>
+      <div class="top right square" id="three"></div>
+    </div>
+
+    <div class="row" id="middleRow">
+      <!-- Middle Row -->
+      <div class="middle left square" id="four"></div>
+      <div class="middle center square" id="five"></div>
+      <div class="middle right square" id="six"></div>
+    </div>
+
+    <div class="row" id="bottomRow">
+      <!-- Bottom Row -->
+      <div class="btm left square" id="seven"></div>
+      <div class="btm middle square" id="eight"></div>
+      <div class="btm right square" id="nine"></div>
+    </div>
+
   </div>
 
-  <div class="row">
-    <!-- Middle Row -->
-    <div class="middle left square" id="square4"></div>
-    <div class="middle center square" id="square5"></div>
-    <div class="middle right square" id="square6"></div>
-  </div>
-
-  <div class="row">
-    <!-- Bottom Row -->
-    <div class="btm left square" id="square7"></div>
-    <div class="btm middle square" id="square8"></div>
-    <div class="btm right square" id="square9"></div>
-  </div>
-
-</div>
+  <script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
