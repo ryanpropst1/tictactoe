@@ -1,104 +1,106 @@
-// var game = {
-//   player1 = "X",
-//   player2 = "O",
-//   currentPlayer = "player1",
-//   moveCount = 0,
-//   clickCount = moveCount,
+let squares = document.querySelectorAll(".square");
+let tLeft = document.getElementById("one");
+let tCenter = document.getElementById("two");
+let tRight = document.getElementById("three");
+let mLeft = document.getElementById("four");
+let mCenter = document.getElementById("five");
+let mRight = document.getElementById("six");
+let bLeft = document.getElementById("seven");
+let bCenter = document.getElementById("eight");
+let bRight = document.getElementById("nine");
+let winnerIs = document.getElementById("winnerCircle");
+let anywhere = document.getElementById("page");
+
+// Friend provided alternate way to refactor when I have time over weekend
+// function getCellValue(id) {
+//   return document.getElementById(id).textContent;
 // }
 
-// player1Sel = new Array();
-// player2Sel = new Array();
-let squares = document.querySelectorAll(".square");
-let tLeft = document.getElementsByClassName(".top .left");
-let tCenter = document.getElementsByClassName(".top .middle");
-let tRight = document.getElementsByClassName(".top .right");
-let mLeft = document.getElementsByClassName("middle left");
-let mCenter = document.getElementsByClassName("middle center");
-let mRight = document.getElementsByClassName("middle right");
-let bLeft = document.getElementsByClassName("bottom left");
-let bCenter = document.getElementsByClassName("bottom middle");
-let bRight = document.getElementsByClassName("bottom right");
-let winnerIs = document.getElementsByClassName("#winnerCircle");
-let anywhere = document.getElementById("#board");
+// function getLineValue(array) {
+//   return array.map(function(arrayItem) {
+//     getCellValue(arrayItem);
+//   });
+// }
 
-let x = 0;
-let w = 0;
 let gameOver = 0;
-let count = 0;
+let counter = 0;
 
-var winCombo = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [1, 4, 7],
-  [2, 5, 8],
-  [3, 6, 9],
-  [1, 5, 9],
-  [(3, 5, 7)]
-];
+// alternate way to switch players from discussing with a friend
+// let player = 'player1'
 
-//
-//
+// function switchPlayer(currentPlayer) {
+//   return currentPlayer === 'player1' ? 'player2': 'player1'
+// }
 
-function isEven(x) {
-  return x % 2 == 0;
-}
+// let playerX = true
 
-function isOdd(x) {
-  return !isEven(x);
-}
+// function switchPlayer(currentPlayer) {
+//   return playerX = !currentPlayer
+// }
 
-//
-//
+// switchPlayer(playerX)
 
 squares.forEach(function(square) {
   square.addEventListener("click", squareClicked, true);
 });
-
-// anywhere.addEventListener("click", gameOver, true);
 //
-
+//
+anywhere.addEventListener("click", gameEnd, true);
+//
+//
 function squareClicked(event) {
-  alert(event.target.id);
-  // alert(event.target.textContent);
+  if (counter % 2 === 0 && event.target.textContent !== "O") {
+    event.target.textContent = "X";
+    ++counter;
+    checkForWinner();
+  } else if (counter % 2 === 1 && event.target.textContent !== "X") {
+    event.target.textContent = "O";
+    ++counter;
+    checkForWinner();
+  }
+}
+//
+//
+function checkForWinner() {
+  // let tRowNew = getLineValue([1,2,3])
+  let tRow = tLeft.textContent + tCenter.textContent + tRight.textContent;
+  // console.log(tLeft.textContent);
+  let mRow = mLeft.textContent + mCenter.textContent + mRight.textContent;
+  let bRow = bLeft.textContent + bCenter.textContent + bRight.textContent;
+  let lColumn = tLeft.textContent + mLeft.textContent + bLeft.textContent;
+  let cColumn = tCenter.textContent + mCenter.textContent + bCenter.textContent;
+  let rColumn = tRight.textContent + mRight.textContent + bRight.textContent;
+  let ldiag = tLeft.textContent + mCenter.textContent + bRight.textContent;
+  let rdiag = tRight.textContent + mCenter.textContent + bLeft.textContent;
+  var winner = [tRow, mRow, bRow, lColumn, cColumn, rColumn, ldiag, rdiag];
+  for (var i = 0; i < winner.length; i++) {
+    console.log(winner[i]);
+    if (gameOver == 1) {
+      winnerIs.textContent += "";
+      square.textContent += "";
+      gameEnd();
+      ++gameOver;
+    } else if (winner[i] === "XXX") {
+      winnerIs.textContent = "And Our winner is... X!";
+      ++gameOver;
+      return true;
+    } else if (winner[i] === "OOO") {
+      winnerIs.textContent = "And Our winner is... O!";
+      ++gameOver;
+      return true;
+    }
+  }
+  if (counter == 9 && winner !== true) {
+    winnerIs.textContent = "Looks like we have a draw!";
+    gameOver = 3;
+    counter++;
+  }
 }
 
-//
-//
-//
-//
-// CHANGE PLAYER FOR NEXT TURN
-// if (currentPlayer === "Player1") {
-//   currentPlayer = "Player2";
-// } else {
-//   currentPlayer = "Player1";
-// }
-//end of else
-
-// let currentPlayer = currentPlayer === "Player2" ? "Player1" : "Player2"
-
-// // Get the modal
-// var modal = document.getElementsByClassNamed("myModal");
-
-// // Get the button that opens the modal
-// var btn = document.getElementsByClassNamed("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// };
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// };
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
+function gameEnd() {
+  if (gameOver === 1) {
+    location.reload();
+  } else if (gameOver === 3) {
+    location.reload();
+  }
+}

@@ -2,6 +2,7 @@
 #board {
   padding-top: 3em;
   text-align: center;
+  text-s
 }
 
 
@@ -34,6 +35,11 @@ h3 {
   float: left;
   height: 100px;
   width: 100px;
+}
+
+.square {
+  text-align: center;
+  font-size: 90px;
 }
 
 /* my cursor is already a pointer so made this a crosshair and added square class for hover feature in each square */
