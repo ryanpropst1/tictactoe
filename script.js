@@ -24,6 +24,7 @@ let anywhere = document.getElementById("page");
 
 let gameOver = 0;
 let counter = 0;
+// let test = " ";
 
 // alternate way to switch players from discussing with a friend
 // let player = 'player1'
@@ -49,11 +50,13 @@ anywhere.addEventListener("click", gameEnd, true);
 //
 //
 function squareClicked(event) {
-  if (counter % 2 === 0 && event.target.textContent !== "O") {
+  if (counter % 2 == 0 && event.target.textContent !== "O") {
     event.target.textContent = "X";
+    test = event.target.textContent;
+    // console.log(test);
     ++counter;
     checkForWinner();
-  } else if (counter % 2 === 1 && event.target.textContent !== "X") {
+  } else if (counter % 2 == 1 && event.target.textContent !== "X") {
     event.target.textContent = "O";
     ++counter;
     checkForWinner();
@@ -74,15 +77,20 @@ function checkForWinner() {
   let rdiag = tRight.textContent + mCenter.textContent + bLeft.textContent;
   var winner = [tRow, mRow, bRow, lColumn, cColumn, rColumn, ldiag, rdiag];
   for (var i = 0; i < winner.length; i++) {
-    console.log(winner[i]);
+    // console.log(winner[i]);
     if (gameOver == 1) {
       winnerIs.textContent += "";
       square.textContent += "";
+      // console.log( " this is after gameOver has been set to 1 and entering the first if conditional"
+      // );
       gameEnd();
       ++gameOver;
     } else if (winner[i] === "XXX") {
       winnerIs.textContent = "And Our winner is... X!";
       ++gameOver;
+      // console.log(
+      //   " this is after winner has been set to  X and gameOver increments by 1 and entering the 2nd if conditional"
+      // );
       return true;
     } else if (winner[i] === "OOO") {
       winnerIs.textContent = "And Our winner is... O!";
