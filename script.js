@@ -52,7 +52,7 @@ anywhere.addEventListener("click", gameEnd, true);
 function squareClicked(event) {
   if (counter % 2 == 0 && event.target.textContent !== "O") {
     event.target.textContent = "X";
-    test = event.target.textContent;
+    // test = event.target.textContent;
     // console.log(test);
     ++counter;
     checkForWinner();
