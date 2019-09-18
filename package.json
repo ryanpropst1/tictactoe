@@ -1,0 +1,29 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "JavaScript Interactive TicTacToe Game",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanpropst1/tictactoe.git"
+  },
+  "author": "Ryan Propst",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanpropst1/tictactoe/issues"
+  },
+  "homepage": "https://github.com/ryanpropst1/tictactoe#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jshint": "^2.10.2",
+    "nodemon": "^1.19.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}
