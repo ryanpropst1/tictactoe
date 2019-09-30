@@ -2,51 +2,53 @@
 <html lang="en" id="page">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tic Tac Toe Game</title>
-  <link rel="stylesheet" href="tictactoe.css">
-  <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- Head -->
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="tictactoe.css">
+    <link rel="icon" href="Alien.png">
+    <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+
+    <!-- Head -->
 </head>
 
 <!-- Body -->
 
 <body>
 
-  <!-- Container -->
-  <div class="container" id="board">
+    <!-- Container -->
+    <div class="container" id="board">
 
-    <!-- Heading -->
-    <h1>Tic Tac Toe</h1>
-    <h3 class="winner" id="winnerCircle"></h3>
+        <!-- Heading -->
+        <h1>Tic Tac Toe</h1>
+        <h3 class="winner" id="winnerCircle"></h3>
 
-    <div class="row" id="topRow">
-      <!-- Top Row -->
-      <div class="top left square" id="one"></div>
-      <div class="top middle square" id="two"></div>
-      <div class="top right square" id="three"></div>
+        <div class="row" id="topRow">
+            <!-- Top Row -->
+            <div class="top left square" id="one"></div>
+            <div class="top middle square" id="two"></div>
+            <div class="top right square" id="three"></div>
+        </div>
+
+        <div class="row" id="middleRow">
+            <!-- Middle Row -->
+            <div class="middle left square" id="four"></div>
+            <div class="middle center square" id="five"></div>
+            <div class="middle right square" id="six"></div>
+        </div>
+
+        <div class="row" id="bottomRow">
+            <!-- Bottom Row -->
+            <div class="btm left square" id="seven"></div>
+            <div class="btm middle square" id="eight"></div>
+            <div class="btm right square" id="nine"></div>
+        </div>
+
     </div>
 
-    <div class="row" id="middleRow">
-      <!-- Middle Row -->
-      <div class="middle left square" id="four"></div>
-      <div class="middle center square" id="five"></div>
-      <div class="middle right square" id="six"></div>
-    </div>
-
-    <div class="row" id="bottomRow">
-      <!-- Bottom Row -->
-      <div class="btm left square" id="seven"></div>
-      <div class="btm middle square" id="eight"></div>
-      <div class="btm right square" id="nine"></div>
-    </div>
-
-  </div>
-
-  <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
